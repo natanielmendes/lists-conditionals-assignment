@@ -18,6 +18,7 @@ class App extends Component {
       <div className="App">
         <input type="text" className="textInput" onChange={this.inputChangedHandler} value={this.state.userInput}></input>
         <p>{this.state.userInput}</p>
+        <Validation textLength={this.state.userInput.length}/>
         <hr />
         <ol>
           <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
