@@ -15,8 +15,8 @@ class App extends Component {
   }
 
   render() {
-    let characterList = this.state.userInput.split('').map(character => {
-      return <Char textToShow={character}/>
+    let characterList = this.state.userInput.split('').map((character, index) => {
+      return <Char textToShow={character} key={index}/>
     })
 
     return (
