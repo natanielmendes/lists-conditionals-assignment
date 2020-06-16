@@ -15,11 +15,16 @@ class App extends Component {
   }
 
   render() {
+    let characterList = this.state.userInput.split('').map(character => {
+      return <Char textToShow={character}/>
+    })
+
     return (
       <div className="App">
         <input type="text" className="textInput" onChange={this.inputChangedHandler} value={this.state.userInput}></input>
         <p>{this.state.userInput}</p>
         <Validation textLength={this.state.userInput.length}/>
+        {characterList}
         <hr />
         <ol>
           <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
