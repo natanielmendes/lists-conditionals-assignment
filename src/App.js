@@ -14,9 +14,17 @@ class App extends Component {
     })
   }
 
+  deleteCharHandler = (index) => {
+    let userInputArr = this.state.userInput.slice().split('');
+    userInputArr.splice(index, 1);
+    this.setState({
+      userInput: userInputArr.join('')
+    });
+  }
+
   render() {
     let characterList = this.state.userInput.split('').map((character, index) => {
-      return <Char textToShow={character} key={index}/>
+      return <Char textToShow={character} key={index} clicked={() => this.deleteCharHandler(index)} />
     })
 
     return (
